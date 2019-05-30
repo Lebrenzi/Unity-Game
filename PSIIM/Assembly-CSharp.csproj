@@ -60,10 +60,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\CameraMove.cs" />
     <Compile Include="Assets\Controls.cs" />
+    <Compile Include="Assets\Crystals.cs" />
+    <Compile Include="Assets\Exit.cs" />
     <Compile Include="Assets\Hazard.cs" />
+    <Compile Include="Assets\ObjectMove.cs" />
+    <Compile Include="Assets\Score.cs" />
     <Compile Include="Assets\Touch.cs" />
+    <Compile Include="Assets\WinScript.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/Lenovo/iCloudDrive/Projektowanie Systemów Internetowych i Mobilnych/Projekt/PSIIM/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

@@ -15,12 +15,15 @@ using UnityEngine;
     public float groundCheckRadius;
     public LayerMask whatIsGround;
     private bool onGround;
+    public int crystals;
+    private Animation anim;
 
     // Use this for initialization
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
+        crystals = 0;
+        anim = GetComponent<Animation>();
     }
 
     void FixedUpdate()
@@ -32,7 +35,8 @@ using UnityEngine;
     void Update()
     {
 
-
+        //Animator animator =
+          //          GetComponent<Animator>();
 
         if (Input.GetKey(KeyCode.LeftArrow))
         {
@@ -55,19 +59,24 @@ using UnityEngine;
 
         if (jump)
         {
-            Animator animator =
-                    GetComponent<Animator>();
+            
             if (onGround)
             {
-                
-                animator.SetBool("Jump", jump);
+                               
                 rb.velocity = new Vector2(rb.velocity.x, jumpheight);
                 
             }
             jump = false;
-            animator.SetBool("Jump", jump);
+            
         }
-
+        if (rb.velocity.x != 0 && onGround)
+        {
+            anim.Play();
+        }
+        else
+        {
+            anim.Stop();
+        }
         if (moveright)
         {
             rb.velocity = new Vector2(movespeed, rb.velocity.y);
@@ -76,8 +85,7 @@ using UnityEngine;
         {
             rb.velocity = new Vector2(-movespeed, rb.velocity.y);
         }
-        Animator animator1 =
-                    GetComponent<Animator>();
+        
         
 
     }
